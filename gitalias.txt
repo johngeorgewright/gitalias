@@ -948,7 +948,8 @@
   topic-create = "!f(){ \
     topic_branch=\"$1\"; \
     base_branch=$(git topic-base-branch-name); \
-    git checkout \"$base_branch\"; git pull; \
+    git checkout \"$base_branch\"; \
+    git get; \
     git checkout -b \"$topic_branch\" \"$base_branch\"; \
   };f"
 
