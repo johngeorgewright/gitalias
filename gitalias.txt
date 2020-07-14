@@ -1404,6 +1404,15 @@
     git push origin \":$old_branch\" \"$new_branch\"; \
   };f"
 
+  topic-merge = "!f() { \
+    topic_branch=$(git branch-name); \
+    base_branch=$(git topic-base-branch-name); \
+    git co \"$base_branch\" ; \
+    git get ; \
+    git co \"$topic_branch\" ; \
+    git merge \"$base_branch\" ; \
+  };f"
+
 
   ##########################################################################
 
